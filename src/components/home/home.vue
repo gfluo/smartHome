@@ -56,9 +56,9 @@
         <Submenu name="1">
           <template slot="title">
             <Icon type="ios-navigate"></Icon>
-            房间列表
+            产品管理
           </template>
-          <MenuItem v-for="(item, index) in roomList" :name="'room' + item" :key="index">{{item}}</MenuItem>
+          <MenuItem v-for="(item, index) in goodsManage" :name="item" :key="index">{{item}}</MenuItem>
         </Submenu>
         <Submenu name="2">
           <template slot="title">
@@ -99,6 +99,7 @@
   export default {
     data() {
       return {
+        goodsManage: ['产品列表', '产品增加', '产品ID分配', '配置中心'],
         roomList: [],
         mainPage: {
           levelOne: '',
@@ -119,6 +120,8 @@
       routeTo(path) {
         if (-1 < path.indexOf('room') && 'room' !== path){
           this.$router.push({path: '/home/room', query: {roomId: path.replace('room/', '')}});
+        } else {
+          this.$router.push({path: '/home/goodsList', query: {type: path}});
         }
       }
     }
