@@ -97,7 +97,7 @@
                 this.$Message.error(res['data']['msg']);
             }).catch(err => {
               this.$Message.error(err);
-            })
+            })	
           }
           else
             this.$Message.error('无效输入!');
