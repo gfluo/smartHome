@@ -29,6 +29,10 @@ export default new Router({
                 path: '/home/goodsList',
                 name: 'GoodsList',
                 component: resolve => require(['../components/home/goodsList.vue'], resolve)
+            }, {
+                path: '/home/goodsDetail',
+                name: 'GoodsDetail',
+                component: resolve => require(['../components/home/goodsDetail.vue'], resolve)
             }]
         }
     ]

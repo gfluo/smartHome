@@ -57,6 +57,40 @@
           }, {
             title: '所属地',
             key: 'belongPlace',
+          },{
+            title: '管理',
+            key: 'action',
+            width: 150,
+            align: 'center',
+            render: (h, params) => {
+              return h('div', [
+                h('Button', {
+                  props: {
+                    type: 'primary',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {
+                      this.routeToDetail(params.index);
+                    }
+                  }
+                }, '详细'),
+                h('Button', {
+                  props: {
+                    type: 'error',
+                    size: 'small'
+                  },
+                  on: {
+                    click: () => {
+                      this.remove(params.index)
+                    }
+                  }
+                }, '删除')
+              ]);
+            }
           }],
           rows: [{
             name: '中控',
@@ -110,6 +144,11 @@
             },
           ],
         }
+      },
+      methods: {
+          routeToDetail: function (params) {
+            this.$router.push({path: '/home/goodsDetail', query: {id: this.rows[params].id}});
+          }
       }
     }
 </script>
