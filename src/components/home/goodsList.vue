@@ -34,40 +34,40 @@
       data() {
         return {
           header: [{
-              title: '设备编号',
-              key: 'id',
-          },{
-              title: '当前状态',
-              key: 'status',
-          },{
-              title: '设备名称',
-              key: 'name',
-          },{
-              title: '绑定日期',
-              key: 'bindDate',
-          },{
-              title: '厂家',
-              key: 'factory',
-          },{
-              title: '设备型号',
-              key: 'model',
-          },{
-              title: '生产日期',
-              key: 'createDate',
-          },{
-              title: '所属地',
-              key: 'belongPlace',
+            title: '设备编号',
+            key: 'id',
+          }, {
+            title: '当前状态',
+            key: 'status',
+          }, {
+            title: '设备名称',
+            key: 'name',
+          }, {
+            title: '绑定日期',
+            key: 'bindDate',
+          }, {
+            title: '厂家',
+            key: 'factory',
+          }, {
+            title: '设备型号',
+            key: 'model',
+          }, {
+            title: '生产日期',
+            key: 'createDate',
+          }, {
+            title: '所属地',
+            key: 'belongPlace',
           }],
           rows: [{
-              name: '中控',
-              status: '正常',
-              id: '00001',
-              bindDate: new Date().toLocaleDateString(),
-              factory: '利思比',
-              model: 'P8S',
-              createDate: new Date().toLocaleDateString(),
-              belongPlace: '江西南昌',
-          },{
+            name: '中控',
+            status: '正常',
+            id: '00001',
+            bindDate: new Date().toLocaleDateString(),
+            factory: '利思比',
+            model: 'P8S',
+            createDate: new Date().toLocaleDateString(),
+            belongPlace: '江西南昌',
+          }, {
             name: '中控',
             status: '正常',
             id: '00002',

@@ -11,7 +11,7 @@
     padding: 10px 15px 0;
   }
   .layout-content{
-    min-height: 510px;
+    min-height: 100%;
     margin: 15px;
     overflow: hidden;
     background: #fff;
