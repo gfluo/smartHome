@@ -77,13 +77,13 @@
       </Menu>
       </i-col>
       <i-col span="19">
-      <div class="layout-header"></div>
-      <div class="layout-breadcrumb">
+      <div id='header' class="layout-header"></div>
+      <div id='minHeader' class="layout-breadcrumb">
         <Breadcrumb>
           <BreadcrumbItem>{{this.$route.path.replace('/', '')}}</BreadcrumbItem>
         </Breadcrumb>
       </div>
-      <div class="layout-content">
+      <div id='content' class="layout-content">
         <div class="layout-content-main">
           <transition mode="out-in">
             <router-view></router-view>
@@ -106,14 +106,13 @@
         }
       }
     },
-    created: function () {
-      this.$http.post('/admin/getRoomList', {}).then(res => {
-        if (1 === res['data']['code']) {
-          this.roomList = res['data']['roomList'];
-        }
-      }).catch(err => {
-        this.$Message.error(err);
-      });
+    mounted: function () {
+      this.$nextTick(function () {
+        let content = document.getElementById('content');
+        let headerHeight = document.getElementById('header').offsetHeight;
+        let minHeader = document.getElementById('minHeader').offsetHeight;
+        content.style['min-height'] = (window.innerHeight - headerHeight - minHeader - 30) + 'px';
+      })
     },
     methods: {
       routeTo(path) {
