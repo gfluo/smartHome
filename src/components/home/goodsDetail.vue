@@ -16,6 +16,8 @@
   }
   .private {
     clear: both;
+    position: relative;
+    top: 50px;
   }
   .userInfo {
     text-align: left;
@@ -44,7 +46,10 @@
       <h2>用户信息</h2>
       <div class="userInfo">
         <h3><span>设备状态:</span>
-          <Switch></Switch>
+          <i-switch v-model="status" size="large">
+            <span slot="open">在线</span>
+            <span slot="close">离线</span>
+          </i-switch>
         </h3>
       </div>
     </div>
@@ -55,6 +60,7 @@
     data() {
         return {
             id: this.$route.query['id'],
+            status: true,
         }
     }
   }
