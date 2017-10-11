@@ -12,7 +12,7 @@
   .layout-content{
     min-height: 763px;
     margin: 15px;
-    overflow: hidden;
+    overflow: auto;
     background: #fff;
     border-radius: 4px;
   }

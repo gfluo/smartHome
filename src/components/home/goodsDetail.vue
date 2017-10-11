@@ -1,6 +1,5 @@
 <style scoped>
   .detail {
-    overflow: auto;
   }
   .picture {
     height: 320px;
