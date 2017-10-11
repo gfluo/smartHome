@@ -11,7 +11,7 @@
     padding: 10px 15px 0;
   }
   .layout-content{
-    min-height: 100%;
+    min-height: 600px;
     margin: 15px;
     overflow: hidden;
     background: #fff;
@@ -48,7 +48,7 @@
 <template>
   <div class="layout">
     <Row type="flex">
-      <i-col span="5" class="layout-menu-left">
+      <i-col span="4" class="layout-menu-left">
       <Menu active-name="1-2" theme="dark" width="auto" @on-select="routeTo">
         <div class="layout-logo-left">
           <h3>导航中心</h3>
