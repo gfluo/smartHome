@@ -111,7 +111,7 @@
         let content = document.getElementById('content');
         let headerHeight = document.getElementById('header').offsetHeight;
         let minHeader = document.getElementById('minHeader').offsetHeight;
-        content.style['min-height'] = (window.innerHeight - headerHeight - minHeader - 30) + 'px';
+        content.style['min-height'] = (window.innerHeight - headerHeight - minHeader - 32) + 'px';
       })
     },
     methods: {
