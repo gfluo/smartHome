@@ -26,7 +26,7 @@
   <div class="detail">
     <div>
       <h2>基本信息</h2>
-      <img src="http://localhost:8888/static/img/specs_blue.642a2ef.jpg" class="picture"/>
+      <img src="../../assets/specs_blue.jpg" class="picture"/>
       <div class="attributes">
         <h3><span>设备ID:</span> {{id}}</h3>
         <h3><span>生成厂家:</span> 利思比</h3>
