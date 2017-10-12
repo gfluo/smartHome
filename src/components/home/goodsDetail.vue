@@ -50,6 +50,7 @@
             <span slot="close">离线</span>
           </i-switch>
         </h3>
+        <h3><span>所属用户:</span> </h3>
       </div>
     </div>
   </div>

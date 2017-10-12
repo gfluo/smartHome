@@ -4,7 +4,6 @@
     background: #f5f7f9;
     position: relative;
     border-radius: 4px;
-    overflow: hidden;
   }
   .layout-breadcrumb{
     padding: 10px 15px 0;
@@ -12,7 +11,6 @@
   .layout-content{
     min-height: 763px;
     margin: 15px;
-    overflow: auto;
     background: #fff;
     border-radius: 4px;
   }
@@ -55,15 +53,16 @@
         <Submenu name="1">
           <template slot="title">
             <Icon type="ios-navigate"></Icon>
-            产品管理
+            设备管理
           </template>
           <MenuItem v-for="(item, index) in goodsManage" :name="item" :key="index">{{item}}</MenuItem>
         </Submenu>
         <Submenu name="2">
           <template slot="title">
-            <Icon type="ios-keypad"></Icon>
-            模式设置
+            <Icon type="ios-navigate"></Icon>
+            产品中心
           </template>
+          <MenuItem v-for="(item, index) in productManage" :name="item.name" :key="index">{{item.value}}</MenuItem>
           <MenuItem name="config">设置中心</MenuItem>
         </Submenu>
         <Submenu name="3">
@@ -98,7 +97,8 @@
   export default {
     data() {
       return {
-        goodsManage: ['产品列表', '产品增加', '产品ID分配', '配置中心'],
+        goodsManage: ['设备列表', '产品ID分配', '配置中心'],
+        productManage: [{value: '产品列表', name: 'home/productList'}, {value: '新增产品', name: 'home/productAdd'}],
         roomList: [],
         mainPage: {
           levelOne: '',
@@ -116,11 +116,15 @@
     },
     methods: {
       routeTo(path) {
+        if (0 !== path.length)
+            this.$router.push({path: '/' + path});
+        /*
         if (-1 < path.indexOf('room') && 'room' !== path){
           this.$router.push({path: '/home/room', query: {roomId: path.replace('room/', '')}});
         } else {
           this.$router.push({path: '/home/goodsList', query: {type: path}});
         }
+        */
       }
     }
   }
