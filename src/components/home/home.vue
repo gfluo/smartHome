@@ -55,7 +55,7 @@
             <Icon type="ios-navigate"></Icon>
             设备管理
           </template>
-          <MenuItem v-for="(item, index) in goodsManage" :name="item" :key="index">{{item}}</MenuItem>
+          <MenuItem v-for="(item, index) in deviceManage" :name="item.name" :key="index">{{item.value}}</MenuItem>
         </Submenu>
         <Submenu name="2">
           <template slot="title">
@@ -97,7 +97,7 @@
   export default {
     data() {
       return {
-        goodsManage: ['设备列表', '产品ID分配', '配置中心'],
+        deviceManage: [{value: '设备列表', name: 'home/deviceList'}, {value: '产品ID分配', name: 'assignID'}],
         productManage: [{value: '产品列表', name: 'home/productList'}, {value: '新增产品', name: 'home/productAdd'}],
         roomList: [],
         mainPage: {

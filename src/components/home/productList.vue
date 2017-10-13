@@ -34,9 +34,6 @@
       data() {
         return {
           header: [{
-            title: '设备编号',
-            key: 'id',
-          }, {
             title: '当前状态',
             key: 'status',
           }, {

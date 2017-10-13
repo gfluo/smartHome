@@ -1,0 +1,26 @@
+#添加商品接口 
+{
+    name: '',               ///名称
+    model: '',              ///型号
+    producUrl: '',          ///产品图片地址
+    pcb: '',                ///pcb版型号
+    firmware: '',           ///固件版本
+    beginNum: '',           ///产品ID段开始序号
+    endNum: '',             ///产品ID段截至序号
+    remarks: '',            ///产品备注
+    factoryInfo: {          
+        name: '',           ///厂家名称
+        province: '',       ///省
+        city: '',           ///市    
+        area: '',           ///区
+        address: '',        ///详细地址
+        contact: '',        ///联系人
+        phoneNumber: '',    ///联系电话
+    }
+}
+
+#获取商品列表
+{
+    
+}
+
