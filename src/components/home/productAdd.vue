@@ -35,7 +35,7 @@
       </FormItem>
       <FormItem label="产品图片">
         <div class="productImg">
-          <img id='img' v-bind:src="imgUrl"/>
+          <img id='img' v-model="imgUrl" v-bind:src="imgUrl"/>
           <Upload :before-upload="handleUpload" action="/posts/">
             <Button type="ghost" icon="ios-cloud-upload-outline">选择产品图片</Button>
           </Upload>
@@ -94,7 +94,7 @@
         <Input v-model="formItem.remarks" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入..."></Input>
       </FormItem>
       <FormItem>
-        <Button type="primary">提交</Button>
+        <Button type="primary" @click="submit">提交</Button>
         <Button type="ghost" style="margin-left: 8px">取消</Button>
       </FormItem>
     </Form>
@@ -136,8 +136,8 @@
       handleUpload: function (file) {
         let _this = this;
         this.imgFile = file;
-        if(!file || !window.FileReader)
-            this.$Message.error('该浏览器不支持图片预览');
+        if (!file || !window.FileReader)
+          this.$Message.error('该浏览器不支持图片预览');
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onloadend = function () {
@@ -149,7 +149,17 @@
         }
       },
       imgUpload: function () {
-
+      },
+      submit: function () {
+        this.$http.post('/user/submit', this.formItem).then(res => {
+          if (1 === res['data']['code']) {
+            this.$Message.success('登录成功');
+            this.$router.push({path: '/home'});
+          } else
+            this.$Message.error(res['data']['msg']);
+        }).catch(err => {
+          this.$Message.error(err);
+        })
       }
     }
   }

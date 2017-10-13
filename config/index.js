@@ -35,7 +35,7 @@ module.exports = {
         headers: {
           Referer: 'https://localhost:4000'
         }
-      }
+      },
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

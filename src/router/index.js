@@ -26,9 +26,9 @@ export default new Router({
           name: 'Category',
           component: resolve => require(['../components/home/category.vue'], resolve)
         }, {
-          path: '/home/goodsList',
-          name: 'GoodsList',
-          component: resolve => require(['../components/home/goodsList.vue'], resolve)
+          path: '/home/productList',
+          name: 'ProductList',
+          component: resolve => require(['../components/home/productList.vue'], resolve)
         }, {
           path: '/home/goodsDetail',
           name: 'GoodsDetail',
