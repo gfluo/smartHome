@@ -4,6 +4,9 @@
     position: relative;
     left: 20%;
   }
+  .productImg {
+
+  }
 </style>
 <template>
   <div class="add">
@@ -20,24 +23,27 @@
         </Row>
       </FormItem>
       <FormItem label="产品图片">
-        <img v-bind:src="imgUrl" />
-        <div>
-          <Upload
-            :before-upload="handleUpload"
-            action="/posts/">
-            <Button type="ghost" icon="ios-cloud-upload-outline">选择要上传文件的文件</Button>
+        <div class="productImg">
+          <img id='img' v-bind:src="imgUrl"/>
+          <Upload :before-upload="handleUpload" action="/posts/">
+            <Button type="ghost" icon="ios-cloud-upload-outline">选择产品图片</Button>
           </Upload>
-          <div v-if="imgFile !== null">待上传文件：{{ imgFile.name }} <Button type="text" @click="upload" :loading="loadingStatus">{{ loadingStatus ? '上传中' : '点击上传' }}</Button></div>
+          <div v-if="imgFile !== null">
+            待上传文件：{{ imgFile.name }}
+            <Button type="text" @click="imgUpload" :loading="loadingStatus">
+              {{ loadingStatus ? '上传中' : '点击上传' }}
+            </Button>
+          </div>
         </div>
       </FormItem>
       <FormItem label="产品ID范围">
         <Row>
           <i-col span="11">
-            <Input type="number" v-model="formItem.beginNum" placeholder="起始序号"></Input>
+            <Input v-model="formItem.beginNum" placeholder="起始序号"></Input>
           </i-col>
           <i-col span="2" style="text-align: center">-</i-col>
           <i-col span="11">
-            <Input type="number" v-model="formItem.endNum" placeholder="截止序号"></Input>
+            <Input v-model="formItem.endNum" placeholder="截止序号"></Input>
           </i-col>
         </Row>
       </FormItem>
@@ -64,7 +70,7 @@
           </i-col>
           <i-col span="2" style="text-align: center">-</i-col>
           <i-col span="6">
-            <Input v-model="formItem.factoryInfo.city" placeholder="区"></Input>
+            <Input v-model="formItem.factoryInfo.area" placeholder="区"></Input>
           </i-col>
         </Row>
         <Row>
@@ -92,7 +98,6 @@
           model: '',
           beginNum: '',
           endNum: '',
-          order: '',
           remarks: '',
           factoryInfo: {
             name: '',
@@ -109,9 +114,29 @@
         imgUrl: '',
       }
     },
+    mounted: function () {
+      this.$nextTick(function () {
+        document.getElementById('img').style['display'] = 'none';
+      });
+    },
     methods: {
       handleUpload: function (file) {
+        let _this = this;
         this.imgFile = file;
+        if(!file || !window.FileReader)
+            this.$Message.error('该浏览器不支持图片预览');
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = function () {
+          let productImg = document.getElementById('img');
+          productImg.style['weight'] = '150px';
+          productImg.style['height'] = '160px';
+          productImg.style['display'] = '';
+          _this.imgUrl = this.result;
+        }
+      },
+      imgUpload: function () {
+        
       }
     }
   }
