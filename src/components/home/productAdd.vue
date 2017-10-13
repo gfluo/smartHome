@@ -22,6 +22,17 @@
           </i-col>
         </Row>
       </FormItem>
+      <FormItem label="版本信息">
+        <Row>
+          <i-col span="11">
+            <Input v-model="formItem.pcb" placeholder="PCB版本"></Input>
+          </i-col>
+          <i-col span="2" style="text-align: center">-</i-col>
+          <i-col span="11">
+            <Input v-model="formItem.frimware" placeholder="固件版本"></Input>
+          </i-col>
+        </Row>
+      </FormItem>
       <FormItem label="产品图片">
         <div class="productImg">
           <img id='img' v-bind:src="imgUrl"/>
@@ -96,6 +107,8 @@
         formItem: {
           name: '',
           model: '',
+          pcb: '',
+          firmware: '',
           beginNum: '',
           endNum: '',
           remarks: '',
