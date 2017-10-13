@@ -29,7 +29,7 @@
             <Button type="ghost" icon="ios-cloud-upload-outline">选择产品图片</Button>
           </Upload>
           <div v-if="imgFile !== null">
-            待上传文件：{{ imgFile.name }}
+            产品图片：{{ imgFile.name }}
             <Button type="text" @click="imgUpload" :loading="loadingStatus">
               {{ loadingStatus ? '上传中' : '点击上传' }}
             </Button>
@@ -52,11 +52,11 @@
       </FormItem>
       <FormItem label="厂家信息">
         <Row>
-          <i-col span="11">
+          <i-col span="6">
             <Input v-model="formItem.factoryInfo.contact" placeholder="联系人"></Input>
           </i-col>
           <i-col span="2" style="text-align: center">-</i-col>
-          <i-col span="11">
+          <i-col span="6">
             <Input v-model="formItem.factoryInfo.phoneNumber" placeholder="联系方式"></Input>
           </i-col>
         </Row>
@@ -136,7 +136,7 @@
         }
       },
       imgUpload: function () {
-        
+
       }
     }
   }
