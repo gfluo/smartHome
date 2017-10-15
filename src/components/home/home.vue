@@ -79,6 +79,13 @@
           </template>
           <MenuItem v-for='(item, index) in afterSalesServer' :name="item.name" :key='index'>{{item.value}}</MenuItem>
         </Submenu>
+        <Submenu name="5">
+          <template slot="title">
+            <Icon type="hammer"></Icon>
+            固件管理
+          </template>
+          <MenuItem v-for='(item, index) in firmwareManage' :name="item.name" :key='index'>{{item.value}}</MenuItem>
+        </Submenu>
       </Menu>
       </i-col>
       <i-col span="19">
@@ -112,6 +119,13 @@
           }, {
             value: '售后维修', name: 'home/fix',
           }],
+        firmwareManage: [{
+          value: '新建任务', name: 'home/addTask',
+        }, {
+          value: '升级列表', name: 'home/updateList',
+        }, {
+          value: '版本管理', name: 'home/firmwareVersion',
+        }],
         roomList: [],
         mainPage: {
           levelOne: '',

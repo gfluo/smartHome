@@ -45,6 +45,10 @@ export default new Router({
                 path: '/home/factoryInfo',
                 name: 'FactoryInfo',
                 component: resolve => require(['../components/home/factoryInfo.vue'], resolve)
+            }, {
+                path: '/home/firmwareVersion',
+                name: 'FirmwareVersion',
+                component: resolve => require(['../components/home/firmwareVersion.vue'], resolve)
             }, ]
         }
     ]
