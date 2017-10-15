@@ -72,7 +72,13 @@
           </template>
           <MenuItem name="manage">人员管理</MenuItem>
         </Submenu>
-
+        <Submenu name="4">
+          <template slot="title">
+            <Icon type="wrench"></Icon>
+            售后服务
+          </template>
+          <MenuItem v-for='(item, index) in afterSalesServer' :name="item.name" :key='index'>{{item.value}}</MenuItem>
+        </Submenu>
       </Menu>
       </i-col>
       <i-col span="19">
@@ -99,6 +105,13 @@
       return {
         deviceManage: [{value: '设备列表', name: 'home/deviceList'}, {value: '产品ID分配', name: 'assignID'}],
         productManage: [{value: '产品列表', name: 'home/productList'}, {value: '新增产品', name: 'home/productAdd'}],
+        afterSalesServer: [{
+            value: '厂家信息', name: 'home/factoryInfo'
+          }, {
+            value: '固件升级', name: 'home/update',
+          }, {
+            value: '售后维修', name: 'home/fix',
+          }],
         roomList: [],
         mainPage: {
           levelOne: '',

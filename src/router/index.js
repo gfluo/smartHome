@@ -41,6 +41,10 @@ export default new Router({
                 path: '/home/deviceList',
                 name: 'DeviceList',
                 component: resolve => require(['../components/home/deviceList.vue'], resolve)
+            }, {
+                path: '/home/factoryInfo',
+                name: 'FactoryInfo',
+                component: resolve => require(['../components/home/FactoryInfo.vue'], resolve)
             }, ]
         }
     ]
