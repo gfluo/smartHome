@@ -44,7 +44,7 @@ export default new Router({
             }, {
                 path: '/home/factoryInfo',
                 name: 'FactoryInfo',
-                component: resolve => require(['../components/home/FactoryInfo.vue'], resolve)
+                component: resolve => require(['../components/home/factoryInfo.vue'], resolve)
             }, ]
         }
     ]
